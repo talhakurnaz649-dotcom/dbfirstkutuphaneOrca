@@ -1,0 +1,14 @@
+﻿@model dbfirstkutuphane.Models.Uyeler
+@{
+    ViewData["Title"] = "Üye Düzenle";
+}
+<h2 class="page-title">Üye Düzenle</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="UyeId" />
+    <div class="mb-3"><label class="form-label">Ad</label><input asp-for="Ad" class="form-control" /></div>
+    <div class="mb-3"><label class="form-label">Soyad</label><input asp-for="Soyad" class="form-control" /></div>
+    <div class="mb-3"><label class="form-label">Email</label><input asp-for="Email" class="form-control" /></div>
+    <div class="mb-3"><label class="form-label">Telefon</label><input asp-for="Telefon" class="form-control" /></div>
+    <button type="submit" class="btn btn-gold">Güncelle</button>
+    <a href="/Uye/Index" class="btn btn-secondary">Geri</a>
+</form>

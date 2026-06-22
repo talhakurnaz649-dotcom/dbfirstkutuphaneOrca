@@ -1,0 +1,21 @@
+﻿@model dbfirstkutuphane.Models.OduncIslemleri
+@{
+    ViewData["Title"] = "Ödünç Sil";
+}
+<h2 class="page-title">Ödünç Sil</h2>
+<h4>Bu ödünç işlemini silmek istediğinize emin misiniz?</h4>
+<dl class="row">
+    <dt class="col-sm-2">Kitap</dt>
+    <dd class="col-sm-10">@Model.Kitap?.Ad</dd>
+    <dt class="col-sm-2">Üye</dt>
+    <dd class="col-sm-10">@Model.Uye?.Ad @Model.Uye?.Soyad</dd>
+    <dt class="col-sm-2">Ödünç Tarihi</dt>
+    <dd class="col-sm-10">@Model.OduncTarihi.ToString("dd.MM.yyyy")</dd>
+    <dt class="col-sm-2">İade Tarihi</dt>
+    <dd class="col-sm-10">@(Model.IadeTarihi?.ToString("dd.MM.yyyy") ?? "-")</dd>
+</dl>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="OduncId" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a href="/Odunc/Index" class="btn btn-secondary">Geri</a>
+</form>

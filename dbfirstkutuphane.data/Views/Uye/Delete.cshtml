@@ -1,0 +1,21 @@
+﻿@model dbfirstkutuphane.Models.Uyeler
+@{
+    ViewData["Title"] = "Üye Sil";
+}
+<h2 class="page-title">Üye Sil</h2>
+<h4>Bu üyeyi silmek istediğinize emin misiniz?</h4>
+<dl class="row">
+    <dt class="col-sm-2">Ad</dt>
+    <dd class="col-sm-10">@Model.Ad</dd>
+    <dt class="col-sm-2">Soyad</dt>
+    <dd class="col-sm-10">@Model.Soyad</dd>
+    <dt class="col-sm-2">Email</dt>
+    <dd class="col-sm-10">@Model.Email</dd>
+    <dt class="col-sm-2">Telefon</dt>
+    <dd class="col-sm-10">@Model.Telefon</dd>
+</dl>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="UyeId" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a href="/Uye/Index" class="btn btn-secondary">Geri</a>
+</form>

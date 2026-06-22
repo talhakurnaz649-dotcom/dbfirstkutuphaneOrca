@@ -1,0 +1,48 @@
+﻿@model IEnumerable<dbfirstkutuphane.Models.Kitaplar>
+@{
+    ViewData["Title"] = "Kitaplar";
+    var rol = Context.Session.GetString("Rol");
+}
+<h2 class="page-title">Kitaplar</h2>
+
+@if (rol == "Admin")
+{
+    <p><a href="/Kitap/Create" class="btn btn-gold mb-4">Yeni Kitap Ekle</a></p>
+}
+
+<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
+    @foreach (var kitap in Model)
+    {
+        <div class="col mb-5">
+            <div class="card card-navy-gold h-100">
+                <img src="@(string.IsNullOrEmpty(kitap.ResimUrl) ? "/img/kitap-varsayilan.svg" : kitap.ResimUrl)"
+                     class="card-img-top kitap-kapak" alt="@kitap.Ad"
+                     onerror="this.src='/img/kitap-varsayilan.svg'" />
+                <div class="card-body p-3">
+                    <h6 class="card-title">@kitap.Ad</h6>
+                    <p class="card-text small mb-1">@kitap.Yazar</p>
+                    @if (rol == "Admin")
+                    {
+                        <p class="card-text small text-muted">ISBN: @kitap.ISBN</p>
+                    }
+                    <span class="badge @(kitap.Stok > 0 ? "bg-success" : "bg-danger")">Stok: @kitap.Stok</span>
+                </div>
+                <div class="card-footer p-3 border-top-0 bg-transparent">
+                    @if (rol == "Admin")
+                    {
+                        <a href="/Kitap/Edit/@kitap.KitapId" class="btn btn-warning btn-sm w-100 mb-1">Düzenle</a>
+                        <a href="/Kitap/Delete/@kitap.KitapId" class="btn btn-danger btn-sm w-100">Sil</a>
+                    }
+                    else if (kitap.Stok > 0)
+                    {
+                        <a href="/Odunc/Create?kitapId=@kitap.KitapId" class="btn btn-gold btn-sm w-100">Ödünç Al</a>
+                    }
+                    else
+                    {
+                        <span class="text-danger small">Stokta yok</span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

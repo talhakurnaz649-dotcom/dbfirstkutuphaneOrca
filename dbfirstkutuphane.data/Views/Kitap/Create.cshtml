@@ -1,0 +1,14 @@
+﻿@model dbfirstkutuphane.Models.Kitaplar
+@{
+    ViewData["Title"] = "Kitap Ekle";
+}
+<h2 class="page-title">Kitap Ekle</h2>
+<form asp-action="Create" method="post">
+    <div class="mb-3"><label class="form-label">Ad</label><input asp-for="Ad" class="form-control" /></div>
+    <div class="mb-3"><label class="form-label">Yazar</label><input asp-for="Yazar" class="form-control" /></div>
+    <div class="mb-3"><label class="form-label">ISBN</label><input asp-for="ISBN" class="form-control" /></div>
+    <div class="mb-3"><label class="form-label">Kapak Resmi URL</label><input asp-for="ResimUrl" class="form-control" placeholder="/img/kitaplar/ornek.jpg" /></div>
+    <div class="mb-3"><label class="form-label">Stok</label><input asp-for="Stok" type="number" class="form-control" /></div>
+    <button type="submit" class="btn btn-gold">Kaydet</button>
+    <a href="/Kitap/Index" class="btn btn-secondary">Geri</a>
+</form>

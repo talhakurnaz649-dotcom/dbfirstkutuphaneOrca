@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Giriş";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giriş - Orca Kütüphanesi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="ocean-bg">
+        <div class="ocean-deco ocean-whale-1"></div>
+        <div class="ocean-deco ocean-whale-2"></div>
+        <div class="ocean-deco ocean-shark-1"></div>
+        <div class="ocean-deco ocean-shark-2"></div>
+        <div class="ocean-deco ocean-orca-1"></div>
+        <div class="ocean-deco ocean-orca-2"></div>
+    </div>
+    <div class="page-content container d-flex align-items-center justify-content-center" style="min-height:100vh;">
+        <div class="card card-navy-gold p-4" style="width:400px;">
+            <h3 class="text-center page-title mb-4">🐋 Orca Kütüphanesi</h3>
+
+            @if (ViewBag.Hata != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Hata</div>
+            }
+
+            <form asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Adı</label>
+                    <input name="kullaniciAdi" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Şifre</label>
+                    <input name="sifre" type="password" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-gold w-100">Giriş</button>
+            </form>
+
+            <p class="text-center mt-3 mb-0">
+                Hesabın yok mu? <a href="/Giris/Kayit" class="text-warning">Kayıt Ol</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

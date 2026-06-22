@@ -1,0 +1,23 @@
+﻿@model dbfirstkutuphane.Models.OduncIslemleri
+@{
+    ViewData["Title"] = "Ödünç Düzenle";
+}
+<h2 class="page-title">Ödünç Düzenle</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="OduncId" />
+    <input type="hidden" asp-for="OduncTarihi" />
+    <div class="mb-3">
+        <label class="form-label">Kitap</label>
+        <select asp-for="KitapId" asp-items="ViewBag.KitapId" class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Üye</label>
+        <select asp-for="UyeId" asp-items="ViewBag.UyeId" class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">İade Tarihi</label>
+        <input asp-for="IadeTarihi" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-gold">Güncelle</button>
+    <a href="/Odunc/Index" class="btn btn-secondary">Geri</a>
+</form>

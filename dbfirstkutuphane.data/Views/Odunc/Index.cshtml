@@ -1,0 +1,29 @@
+﻿@model IEnumerable<dbfirstkutuphane.Models.OduncIslemleri>
+@{
+    ViewData["Title"] = "Ödünç İşlemleri";
+    var rol = Context.Session.GetString("Rol");
+}
+<h2 class="page-title">Ödünç İşlemleri</h2>
+<p><a href="/Odunc/Create" class="btn btn-gold">Yeni Ödünç Ekle</a></p>
+
+<table class="table table-dark table-bordered table-hover">
+    <thead><tr><th>Kitap</th><th>Üye</th><th>Ödünç Tarihi</th><th>İade Tarihi</th><th></th></tr></thead>
+    <tbody>
+        @foreach (var odunc in Model)
+        {
+            <tr>
+                <td>@odunc.Kitap?.Ad</td>
+                <td>@odunc.Uye?.Ad @odunc.Uye?.Soyad</td>
+                <td>@odunc.OduncTarihi.ToString("dd.MM.yyyy")</td>
+                <td>@(odunc.IadeTarihi?.ToString("dd.MM.yyyy") ?? "-")</td>
+                <td>
+                    @if (rol == "Admin")
+                    {
+                        <a href="/Odunc/Edit/@odunc.OduncId" class="btn btn-warning btn-sm">Düzenle</a>
+                        <a href="/Odunc/Delete/@odunc.OduncId" class="btn btn-danger btn-sm">Sil</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

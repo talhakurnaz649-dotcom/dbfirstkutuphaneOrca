@@ -1,0 +1,41 @@
+﻿@model dbfirstkutuphane.Models.OduncIslemleri
+@{
+    ViewData["Title"] = "Ödünç Ekle";
+    var rol = ViewBag.Rol as string;
+}
+<h2 class="page-title">Ödünç Ekle</h2>
+
+@if (ViewBag.Hata != null)
+{
+    <div class="alert alert-danger">@ViewBag.Hata</div>
+}
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label">Kitap</label>
+        <select asp-for="KitapId" asp-items="ViewBag.KitapId" class="form-control"></select>
+    </div>
+
+    @if (rol == "User")
+    {
+        <input type="hidden" name="UyeId" value="@ViewBag.UyeId" />
+        <div class="mb-3">
+            <label class="form-label">Üye</label>
+            <input class="form-control" value="@ViewBag.UyeAd" readonly />
+        </div>
+    }
+    else
+    {
+        <div class="mb-3">
+            <label class="form-label">Üye</label>
+            <select asp-for="UyeId" asp-items="ViewBag.UyeId" class="form-control"></select>
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">İade Tarihi</label>
+        <input asp-for="IadeTarihi" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-gold">Kaydet</button>
+    <a href="/Odunc/Index" class="btn btn-secondary">Geri</a>
+</form>

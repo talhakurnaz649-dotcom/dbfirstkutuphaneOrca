@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+    var rol = Context.Session.GetString("Rol");
+}
+
+@section Hero {
+    <div class="hero-header">
+        <div class="container px-4 px-lg-5">
+            <h1>Orca Kütüphanesi</h1>
+            <p>Denizin derinliklerinden ilham alan kütüphane — hoş geldin @Context.Session.GetString("KullaniciAdi")!</p>
+        </div>
+    </div>
+}
+
+<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 justify-content-center">
+    <div class="col mb-5">
+        <div class="card card-navy-gold h-100 text-center">
+            <div class="card-img-top">📖</div>
+            <div class="card-body p-4">
+                <h5 class="card-title">Kitaplar</h5>
+                <p class="card-text">Kitapları görüntüle@(rol == "Admin" ? ", ekle ve düzenle" : " ve ödünç al").</p>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <a href="/Kitap/Index" class="btn btn-gold w-100">Kitaplara Git</a>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-5">
+        <div class="card card-navy-gold h-100 text-center">
+            <div class="card-img-top">📋</div>
+            <div class="card-body p-4">
+                <h5 class="card-title">Ödünç İşlemleri</h5>
+                <p class="card-text">Kitap ödünç al veya iade takibi yap.</p>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <a href="/Odunc/Index" class="btn btn-gold w-100">Ödünçlere Git</a>
+            </div>
+        </div>
+    </div>
+    @if (rol == "Admin")
+    {
+        <div class="col mb-5">
+            <div class="card card-navy-gold h-100 text-center">
+                <div class="card-img-top">👤</div>
+                <div class="card-body p-4">
+                    <h5 class="card-title">Üyeler</h5>
+                    <p class="card-text">Üye kayıtlarını yönet.</p>
+                </div>
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <a href="/Uye/Index" class="btn btn-gold w-100">Üyelere Git</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

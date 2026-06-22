@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="dbfirstkutuphane.data/dbfirstkutuphane.data.csproj" />
+  <Project Path="dbfirstkutuphane/dbfirstkutuphane.csproj" />
+</Solution>

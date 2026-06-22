@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140">
+  <defs>
+    <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#006D77"/>
+      <stop offset="50%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#48CAE4"/>
+    </linearGradient>
+    <linearGradient id="sb" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#90E0EF"/>
+      <stop offset="100%" stop-color="#0096C7"/>
+    </linearGradient>
+  </defs>
+  <!-- Kuyruk -->
+  <path fill="url(#sg)" d="M18,68 C5,50 2,75 12,88 C20,80 22,72 18,68Z"/>
+  <path fill="url(#sg)" d="M18,68 C5,86 2,61 12,48 C20,56 22,64 18,68Z"/>
+  <!-- Gövde -->
+  <path fill="url(#sb)" d="M25,68 C60,40 140,35 220,50 C270,58 295,65 305,70 C295,78 270,82 220,85 C140,92 60,88 25,68Z"/>
+  <!-- Karın açık -->
+  <path fill="#CAF0F8" opacity="0.4" d="M40,72 C100,82 220,80 280,72 C240,88 100,90 40,72Z"/>
+  <!-- Sırt yüzgeci -->
+  <path fill="#0077B6" d="M155,42 C162,18 175,15 178,38 C170,44 160,46 155,42Z"/>
+  <!-- Yüzgeç -->
+  <path fill="#0096C7" opacity="0.8" d="M95,58 C88,45 78,48 82,62 C88,64 92,62 95,58Z"/>
+  <!-- Solungaç -->
+  <path stroke="#0077B6" stroke-width="1.5" fill="none" opacity="0.6" d="M55,65 L48,72 M58,63 L50,70 M61,61 L53,68"/>
+  <!-- Göz -->
+  <circle cx="275" cy="62" r="5" fill="#001520"/>
+  <circle cx="276" cy="61" r="1.5" fill="#90E0EF"/>
+  <!-- Ağız -->
+  <path fill="none" stroke="#0077B6" stroke-width="2" d="M290,72 Q305,78 310,74"/>
+</svg>

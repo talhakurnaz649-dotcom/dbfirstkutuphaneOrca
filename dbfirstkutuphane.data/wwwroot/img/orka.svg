@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160">
+  <defs>
+    <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </linearGradient>
+    <linearGradient id="oa" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#00B4D8"/>
+    </linearGradient>
+  </defs>
+  <!-- Gövde siyah -->
+  <ellipse cx="180" cy="80" rx="140" ry="42" fill="url(#og)"/>
+  <path fill="#0d1b2a" d="M50,80 C90,50 200,48 310,62 C340,68 355,75 360,80 C350,88 310,95 200,98 C90,100 50,95 50,80Z"/>
+  <!-- Beyaz patch -->
+  <ellipse cx="230" cy="72" rx="55" ry="22" fill="#E0F7FA" opacity="0.85"/>
+  <ellipse cx="120" cy="78" rx="35" ry="18" fill="#E0F7FA" opacity="0.7"/>
+  <!-- Aqua vurgu -->
+  <path fill="url(#oa)" opacity="0.3" d="M50,80 C90,50 200,48 310,62 L310,75 C200,88 90,92 50,80Z"/>
+  <!-- S1rt yüzgeci -->
+  <path fill="#00B4D8" d="M175,42 C182,20 198,18 202,40 C192,46 180,48 175,42Z"/>
+  <!-- Kuyruk -->
+  <path fill="#1a1a2e" d="M35,78 C12,60 8,85 20,100 C30,92 38,86 35,78Z"/>
+  <path fill="#1a1a2e" d="M35,78 C12,96 8,71 20,56 C30,64 38,70 35,78Z"/>
+  <!-- Göz -->
+  <circle cx="295" cy="68" r="5" fill="#001a1a"/>
+</svg>

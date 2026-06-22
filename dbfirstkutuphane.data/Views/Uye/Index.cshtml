@@ -1,0 +1,24 @@
+﻿@model IEnumerable<dbfirstkutuphane.Models.Uyeler>
+@{
+    ViewData["Title"] = "Üyeler";
+}
+<h2 class="page-title">Üyeler</h2>
+<p><a href="/Uye/Create" class="btn btn-gold">Yeni Üye Ekle</a></p>
+<table class="table table-dark table-bordered table-hover">
+    <thead><tr><th>Ad</th><th>Soyad</th><th>Email</th><th>Telefon</th><th></th></tr></thead>
+    <tbody>
+        @foreach (var uye in Model)
+        {
+            <tr>
+                <td>@uye.Ad</td>
+                <td>@uye.Soyad</td>
+                <td>@uye.Email</td>
+                <td>@uye.Telefon</td>
+                <td>
+                    <a href="/Uye/Edit/@uye.UyeId" class="btn btn-warning btn-sm">Düzenle</a>
+                    <a href="/Uye/Delete/@uye.UyeId" class="btn btn-danger btn-sm">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Kayıt Ol";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kayıt Ol - Orca Kütüphanesi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="ocean-bg">
+        <div class="ocean-deco ocean-whale-1"></div>
+        <div class="ocean-deco ocean-whale-2"></div>
+        <div class="ocean-deco ocean-shark-1"></div>
+        <div class="ocean-deco ocean-shark-2"></div>
+        <div class="ocean-deco ocean-orca-1"></div>
+        <div class="ocean-deco ocean-orca-2"></div>
+    </div>
+    <div class="page-content container d-flex align-items-center justify-content-center py-5">
+        <div class="card card-navy-gold p-4" style="width:450px;">
+            <h3 class="text-center page-title mb-4">🐋 Kayıt Ol</h3>
+
+            @if (ViewBag.Hata != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Hata</div>
+            }
+
+            <form asp-action="Kayit" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Adı</label>
+                    <input name="kullaniciAdi" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ad</label>
+                    <input name="ad" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Soyad</label>
+                    <input name="soyad" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input name="email" type="email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Şifre</label>
+                    <input name="sifre" type="password" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Şifre Tekrar</label>
+                    <input name="sifreTekrar" type="password" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-gold w-100">Kayıt Ol</button>
+            </form>
+
+            <p class="text-center mt-3 mb-0">
+                Zaten hesabın var mı? <a href="/Giris/Login" class="text-warning">Giriş Yap</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
