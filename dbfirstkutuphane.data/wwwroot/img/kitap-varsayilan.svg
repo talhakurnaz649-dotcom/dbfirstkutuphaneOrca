@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
   <rect width="400" height="600" fill="#141414"/>
   <rect x="20" y="20" width="360" height="560" fill="#1a1a1a" stroke="#c9a84c" stroke-width="4"/>
-  <text x="200" y="300" font-family="Arial" font-size="48" fill="#c9a84c" text-anchor="middle">=Ú</text>
+  <text x="200" y="300" font-family="Arial" font-size="48" fill="#c9a84c" text-anchor="middle">=ï¿½</text>
   <text x="200" y="360" font-family="Arial" font-size="20" fill="#888" text-anchor="middle">Kitap Kapa1</text>
 </svg>
